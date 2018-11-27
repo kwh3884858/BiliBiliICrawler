@@ -3,6 +3,7 @@ package com.StarPlatinum.BilibiliUpInfoCrawler;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.regex.Pattern;
 
@@ -36,8 +37,9 @@ public class VideoInfoCrawler extends WebCrawler {
 		String url = page.getWebURL().getURL();
 		logger.info(url);
 		System.out.println("URL: " + url);
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
 
-		String csvfile = "VidoeInfo" + new Date();
+		String csvfile = "VidoeInfo" +format.format(new Date()).replace(':', '-') ;
 //		File csv = new File("../out/" + csvfile + ".csv");
 //		if (csv.isFile()) {
 //			csv.delete();

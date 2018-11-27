@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.Set;
@@ -60,9 +61,9 @@ public class BilibiliCrawler extends WebCrawler {
 		String url = page.getWebURL().getURL();
 		logger.info(url);
 		System.out.println("URL: " + url);
-
-		String csvfile = "BiliBiliRank" + new Date();
-
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+		String csvfile = "BiliBiliRank" + format.format(new Date()).replace(':', '-') ;
+		System.out.println(csvfile);
 		File csv = CreateFileUtil.createFile("./out/" + csvfile + ".csv");
 		try {
 			OutputStream outputStream= new FileOutputStream(csv);
