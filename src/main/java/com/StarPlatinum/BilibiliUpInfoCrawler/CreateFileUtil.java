@@ -4,14 +4,19 @@ import java.io.File;
 import java.io.IOException;
 
 public class CreateFileUtil {
-	   public static File createFile(String destFileName) {
-	        File file = new File(destFileName);
+	   public static File createFile(String destFileName, String suffix) {
+	        File file = new File(destFileName + "." + suffix);
 	        if(file.exists()) {
 	            System.out.println("创建单个文件" + destFileName + "失败，目标文件已存在！");
-	            return null;
+	            
+	            for (int i = 1; file.exists() && i < Integer.MAX_VALUE; i++) {
+	            		file = new File(destFileName + "("+ i +")." + suffix);
+	            }
+	            System.out.println("文件重命名为:" + file.getName());
+	            return file;
 	        }
 	        if (destFileName.endsWith(File.separator)) {
-	            System.out.println("创建单个文件" + destFileName + "失败，目标文件不能为目录！");
+	            System.out.println("创建单个文件" + file.getName() + "失败，目标文件不能为目录！");
 	            return null;
 	        }
 	        //判断目标文件所在的目录是否存在

@@ -44,7 +44,7 @@ public class VideoInfoCrawler extends WebCrawler {
 //		if (csv.isFile()) {
 //			csv.delete();
 //		}
-		File csv = CreateFileUtil.createFile("./out/" + csvfile + ".csv");
+		File csv = CreateFileUtil.createFile("./out/" + csvfile , "csv");
 
 		try {
 			cw = new CsvWriter(new FileWriter(csv, true), ',');

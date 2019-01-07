@@ -64,7 +64,7 @@ public class BilibiliCrawler extends WebCrawler {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
 		String csvfile = "BiliBiliRank" + format.format(new Date()).replace(':', '-') ;
 		System.out.println(csvfile);
-		File csv = CreateFileUtil.createFile("./out/" + csvfile + ".csv");
+		File csv = CreateFileUtil.createFile("./out/" + csvfile , "csv");
 		try {
 			OutputStream outputStream= new FileOutputStream(csv);
 			byte[] uft8bom={(byte)0xef,(byte)0xbb,(byte)0xbf};
