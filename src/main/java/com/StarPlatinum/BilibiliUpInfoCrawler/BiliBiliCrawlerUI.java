@@ -29,12 +29,14 @@ public class BiliBiliCrawlerUI {
 					+ "（0：获取一个视频的详细数据）\n"
 					+ "（1:获取排行榜的数据）\n"
 					+ "（9：退出软件）");
-			
+
 			int flag = -1;
-			if (scanner.hasNextInt()) {
-				flag = scanner.nextInt();	
-				System.out.println("flag is " + flag );
-			}
+			flag = scanner.nextInt();	
+			System.out.println("flag is " + flag );
+//
+//			if (scanner.hasNextInt()) {
+//				
+//			}
 			
 			
 			switch (flag) {
@@ -70,9 +72,10 @@ public class BiliBiliCrawlerUI {
 				System.out.println("进入获取排行榜阶段");
 
 				System.out.println("输入需要获取的榜单\n（0：获取全站榜）\n（1:获取原创榜）");
-				int rankkey = scanner.nextInt();
+				int rankkey;
 				String rank = "none";
 				while (rank == "none") {
+					rankkey = scanner.nextInt();
 					switch (rankkey) {
 					case 0:
 						rank = "all";

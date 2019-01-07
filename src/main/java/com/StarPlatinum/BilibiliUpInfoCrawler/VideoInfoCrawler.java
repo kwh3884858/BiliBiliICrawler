@@ -21,7 +21,12 @@ import edu.uci.ics.crawler4j.crawler.Page;
 import edu.uci.ics.crawler4j.crawler.WebCrawler;
 import edu.uci.ics.crawler4j.parser.HtmlParseData;
 import edu.uci.ics.crawler4j.url.WebURL;
-
+/**
+ * 即将被抛弃，请不要使用这个
+ * 如果你确实需要运行，在pom.xml中把crawler4j重新添加进来即可
+ * @author cookie
+ *
+ */
 public class VideoInfoCrawler extends WebCrawler {
 	private final static Pattern FILTERS = Pattern.compile(".*(\\.(css|js|gif|jpg" + "|png|mp3|mp4|zip|gz))$");
 	CsvWriter cw;

@@ -12,7 +12,12 @@ import edu.uci.ics.crawler4j.crawler.CrawlController;
 import edu.uci.ics.crawler4j.fetcher.PageFetcher;
 import edu.uci.ics.crawler4j.robotstxt.RobotstxtConfig;
 import edu.uci.ics.crawler4j.robotstxt.RobotstxtServer;
-
+/**
+ * 即将被抛弃，请不要使用这个
+ * 如果你确实需要运行，在pom.xml中把crawler4j重新添加进来即可
+ * @author cookie
+ *
+ */
 public class Controller {
 
 	public static void main(String[] args) throws Exception {

@@ -23,7 +23,7 @@
           <transformers>
             <transformer>
               <manifestEntries>
-                <Main-Class>com.StarPlatinum.BilibiliUpInfoCrawler.Controller</Main-Class>
+                <Main-Class>com.StarPlatinum.BilibiliUpInfoCrawler.BiliBiliCrawlerUI</Main-Class>
               </manifestEntries>
             </transformer>
           </transformers>

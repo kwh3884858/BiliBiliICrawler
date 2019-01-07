@@ -1,8 +1,11 @@
 package com.StarPlatinum.BilibiliUpInfoCrawler;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -31,7 +34,19 @@ public class BilibiliCrawlerForVideoInfo {
 
 		String csvfile = "VidoeInfo" +format.format(new Date()).replace(':', '-') ;
 		File csv = CreateFileUtil.createFile("./out/" + csvfile , "csv");
-
+		
+		try {
+			OutputStream outputStream= new FileOutputStream(csv);
+			byte[] uft8bom={(byte)0xef,(byte)0xbb,(byte)0xbf};
+			outputStream.write(uft8bom);
+			outputStream.close();
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		try {
 			m_cw = new CsvWriter(new FileWriter(csv, true), ',');
 			m_cw.write("av号");

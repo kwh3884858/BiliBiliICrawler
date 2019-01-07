@@ -17,7 +17,6 @@ import org.jsoup.select.Elements;
 
 import com.csvreader.CsvWriter;
 
-import edu.uci.ics.crawler4j.parser.HtmlParseData;
 
 public class BilibiliCrawlerForRankList {
 	
